@@ -14,7 +14,14 @@ if (-not (Test-Path $cursor)) { exit }
 
 $reg = "HKCU:\Control Panel\Cursors"
 $bak = "HKCU:\Software\Megatops Software\LaserPointer\Backup"
-$roles = "Arrow","Hand","Help","Wait","AppStarting"
+$roles = @(
+    "Arrow", "Help", "AppStarting", "Wait",
+    "IBeam", "Crosshair", "PrecisionHair",
+    "Hand", "NWPen", "No",
+    "UpArrow",
+    # "SizeNS", "SizeWE", "SizeNWSE", "SizeNESW", "SizeAll",
+    "Pin", "Person"
+)
 
 # Ensure backup exists
 if (-not (Test-Path $bak)) {
